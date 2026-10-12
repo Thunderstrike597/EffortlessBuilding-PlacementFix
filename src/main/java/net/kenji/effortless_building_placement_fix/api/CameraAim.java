@@ -21,16 +21,12 @@ public final class CameraAim {
         Minecraft mc = Minecraft.getInstance();
         if (player != mc.player) return null;
 
-        // Vanilla front-facing third person: vanilla raycasts from the head, so do we.
+        // Front-facing F5: vanilla raycasts from the head, so do we.
         if (mc.options.getCameraType().isMirrored()) return null;
 
         Camera cam = mc.gameRenderer.getMainCamera();
         Vector3f l = cam.getLookVector();
         Vec3 camDir = new Vec3(l.x(), l.y(), l.z());
-
-        // Camera and head point the same way (vanilla first person / vanilla F5 back view):
-        // nothing to fix.
-        if (camDir.dot(player.getLookAngle()) > 0.99996) return null;
 
         // Slide the origin along the camera line to the point nearest the eyes,
         // so reach is measured from the player and blocks behind them can't be hit.

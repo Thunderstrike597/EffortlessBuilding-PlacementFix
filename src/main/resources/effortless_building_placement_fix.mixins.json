@@ -2,17 +2,17 @@
   "required": true,
   "minVersion": "0.8",
   "package": "net.kenji.effortless_building_placement_fix.mixin",
-  "compatibilityLevel": "JAVA_8",
-  "refmap": "effortless_building_placement_fix.refmap.json",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "net.kenji.effortless_building_placement_fix.CompatMixinPlugin",
   "mixins": [
-    "compat.effortlessbuilding.EBFarLookMixin",
+  ],
+  "client": [
+    "compat.effortlessbuilding.EBClientAimMixin",
     "compat.effortlessbuilding.EBLineOriginMixin",
     "compat.effortlessbuilding.EBLookVecMixin",
     "compat.sophistocatedbuilding.SBFarLookMixin",
     "compat.sophistocatedbuilding.SBLineOriginMixin",
     "compat.sophistocatedbuilding.SBLookVecMixin"
-  ],
-  "client": [
   ],
   "injectors": {
     "defaultRequire": 1

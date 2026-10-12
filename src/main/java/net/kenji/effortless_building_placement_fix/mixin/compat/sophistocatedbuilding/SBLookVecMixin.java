@@ -15,7 +15,7 @@ public abstract class SBLookVecMixin {
     @Redirect(method = "getPlayerLookVec",
         at = @At(value = "INVOKE",
             target = "Lnet/minecraft/world/entity/player/Player;getLookAngle()Lnet/minecraft/world/phys/Vec3;"),
-        remap = true)
+        remap = false)
     private static Vec3 camera$look(Player p) {
         CameraAim.Ray r = CameraAim.get(p);
         return r != null ? r.dir() : p.getLookAngle();
