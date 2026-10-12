@@ -28,34 +28,12 @@ public class EffortlessBuildingPlacementFix {
         return FMLLoader.getLoadingModList().getModFileById(modid) != null;
     }
 
+
+
     public EffortlessBuildingPlacementFix() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
-        // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
-       // ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ConfigClient.SPEC, "effortless_building_placement_fix-client.toml");
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
 
-    }
-
-    // Add the example block item to the building blocks tab
-
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-    }
-
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-
-        }
-    }
 }

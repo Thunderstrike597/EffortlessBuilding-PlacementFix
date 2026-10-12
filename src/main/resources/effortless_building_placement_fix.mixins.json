@@ -4,15 +4,16 @@
   "package": "net.kenji.effortless_building_placement_fix.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "effortless_building_placement_fix.refmap.json",
+  "plugin": "net.kenji.effortless_building_placement_fix.CompatMixinPlugin",
   "mixins": [
+  ],
+  "client": [
     "compat.effortlessbuilding.EBFarLookMixin",
     "compat.effortlessbuilding.EBLineOriginMixin",
     "compat.effortlessbuilding.EBLookVecMixin",
     "compat.sophistocatedbuilding.SBFarLookMixin",
     "compat.sophistocatedbuilding.SBLineOriginMixin",
     "compat.sophistocatedbuilding.SBLookVecMixin"
-  ],
-  "client": [
   ],
   "injectors": {
     "defaultRequire": 1
